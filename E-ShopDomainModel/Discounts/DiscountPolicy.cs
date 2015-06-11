@@ -14,9 +14,9 @@ namespace E_ShopDomainModel
         const float discount = 0.3f;
         const float coefficient = 1.67f;
 
-        public decimal PriceCalculation(List<IItemEntity> items)
+        public decimal PriceCalculation(List<ItemEntity> items)
         {
-            decimal sum = items.Sum<IItemEntity>(x => x.Price);
+            decimal sum = items.Sum<ItemEntity>(x => x.Price);
 
             if (sum > minSumForDiscount)
             {

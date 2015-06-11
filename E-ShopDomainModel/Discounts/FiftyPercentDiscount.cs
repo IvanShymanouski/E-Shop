@@ -7,7 +7,7 @@ using E_ShopDomainModel.Interfaces;
 
 namespace E_ShopDomainModel
 {
-    class FiftyPercentDiscount : IDiscount<IItemEntity>
+    class FiftyPercentDiscount : IDiscount<ItemEntity>
     {
         #region fields
         public string Name
@@ -25,7 +25,7 @@ namespace E_ShopDomainModel
         private string name = "Fifty percent dicount";
         #endregion
 
-        public decimal GetDiscount(IItemEntity entity)
+        public decimal GetDiscount(ItemEntity entity)
         {
             return entity.Price * (decimal)0.5;
         }
