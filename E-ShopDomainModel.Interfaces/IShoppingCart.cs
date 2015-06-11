@@ -8,7 +8,10 @@ namespace E_ShopDomainModel.Interfaces
 {
     public interface IShoppingCart : IShoppingCartEntity
     {
-        void AddItemToCart(Guid itemId, IServices<ItemEntity> repository);
+        ItemEntity this[int i]{ get; }
+        int Length { get; }
+            
+        void AddItemToCart(ItemEntity entity);
         void DeleteItemFromCart(Guid itemId);
         void MakePurchase(IPayment payment);
         void ChangeState(long step);

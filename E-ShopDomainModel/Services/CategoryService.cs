@@ -7,7 +7,7 @@ using E_ShopDomainModel.Interfaces;
 
 namespace E_ShopDomainModel
 {
-    class CategoryService : INamedServices<CategoryEntity> //translation by mapping
+    public class CategoryService : INamedServices<CategoryEntity> //translation by mapping
     {
         /*IRepository _repository;
 

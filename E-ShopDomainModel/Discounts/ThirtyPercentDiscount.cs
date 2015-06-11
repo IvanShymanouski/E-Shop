@@ -7,7 +7,7 @@ using E_ShopDomainModel.Interfaces;
 
 namespace E_ShopDomainModel
 {
-    class ThirtyPercentDiscount : IDiscount<ItemEntity> //staic maybe
+    public class ThirtyPercentDiscount : IDiscount<ItemEntity> //staic maybe
     {
         #region fields
         public string Name

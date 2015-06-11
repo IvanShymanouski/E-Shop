@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exeptions\NonexistExeption.cs" />
     <Compile Include="Services\CategoryService.cs" />
     <Compile Include="Services\ItemCategoryRelashionshipService.cs" />
     <Compile Include="Services\ItemService.cs" />
@@ -46,11 +47,9 @@
     <Compile Include="Exeptions\AlreadyExistExeption.cs" />
     <Compile Include="Exeptions\ChangeStatusExeption.cs" />
     <Compile Include="Discounts\DiscountPolicy.cs" />
-    <Compile Include="Discounts\FiftyPercentDiscount.cs" />
     <Compile Include="Exeptions\TransactionFaildExeption.cs" />
     <Compile Include="Payment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Discounts\ThirtyPercentDiscount.cs" />
     <Compile Include="ShoppingCart.cs" />
   </ItemGroup>
   <ItemGroup>

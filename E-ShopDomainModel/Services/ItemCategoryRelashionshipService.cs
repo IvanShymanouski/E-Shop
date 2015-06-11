@@ -7,7 +7,7 @@ using E_ShopDomainModel.Interfaces;
 
 namespace E_ShopDomainModel
 {
-    class ItemCategoryRelashionshipService : IItemCategoryRService //translation by mapping
+    public class ItemCategoryRelashionshipService : IItemCategoryRService //translation by mapping
     {
         /*IRepository _repository;
 

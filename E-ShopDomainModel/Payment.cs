@@ -7,7 +7,7 @@ using E_ShopDomainModel.Interfaces;
 
 namespace E_ShopDomainModel
 {
-    class Payment : IPayment
+    public class Payment : IPayment
     {
         public void MakePayment(decimal price)
         {

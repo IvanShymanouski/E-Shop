@@ -8,7 +8,7 @@ using System.Runtime.Serialization;
 namespace E_ShopDomainModel
 {
     [System.Serializable]
-    class ChangeStatusExeption : Exception
+    public class ChangeStatusExeption : Exception
     {
         public ChangeStatusExeption() { }
 

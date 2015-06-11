@@ -7,7 +7,7 @@ using E_ShopDomainModel.Interfaces;
 
 namespace E_ShopDomainModel
 {
-    class ShoppingCartService : IServices<ShoppingCartEntity>
+    public class ShoppingCartService : IServices<ShoppingCartEntity>
     {
         /*IRepository _repository;
 

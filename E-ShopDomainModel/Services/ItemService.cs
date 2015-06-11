@@ -7,7 +7,7 @@ using E_ShopDomainModel.Interfaces;
 
 namespace E_ShopDomainModel
 {
-    class ItemService : INamedServices<ItemEntity>
+    public class ItemService : INamedServices<ItemEntity>
     {
         /*IRepository _repository;
 

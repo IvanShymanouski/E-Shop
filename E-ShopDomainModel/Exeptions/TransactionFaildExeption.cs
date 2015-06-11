@@ -8,7 +8,7 @@ using System.Runtime.Serialization;
 namespace E_ShopDomainModel
 {
     [System.Serializable]
-    class TransactionFaildExeption : Exception
+    public class TransactionFaildExeption : Exception
     {
         public TransactionFaildExeption() { }
 

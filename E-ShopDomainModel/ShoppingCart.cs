@@ -7,9 +7,24 @@ using E_ShopDomainModel.Interfaces;
 
 namespace E_ShopDomainModel
 {
-    class ShoppingCart : IShoppingCart
+    public class ShoppingCart : IShoppingCart
     {
         #region fields
+        public ItemEntity this[int i]
+        {
+            get 
+            {
+                if (i >= items.Count) i = items.Count - 1;
+                else if (i < 0) i = 0;
+                return items.ElementAt(i);
+            }
+            private set { }
+        }
+        public int Length
+        {
+            get { return items.Count; }
+            private set { }
+        }
         public Guid Id { get; private set; }
         public long State { get; private set; }
        
@@ -25,46 +40,44 @@ namespace E_ShopDomainModel
             State = 0;
         }
 
-        public ShoppingCart(ShoppingCartEntity entity, IDiscountPolicy discount)
+        public ShoppingCart(IDiscountPolicy discount, ShoppingCartEntity entity)
         {
             Id = entity.Id;
             State = entity.State;
             _discount = discount;
         }
 
-        public void AddItemToCart(Guid itemId, IServices<ItemEntity> repository)
+        public void AddItemToCart(ItemEntity entity)
         {
+            if (entity == null) throw new ArgumentNullException("Entity object is null");
             foreach (var item in items)
             {
-                if (item.ItemId == itemId)
+                if (item.ItemId == entity.ItemId)
                 {
-                    throw new AlreadyExistExeption("Adding item in Cart "+Id+" faild");
+                    throw new AlreadyExistExeption("Adding item in Cart " + entity.ItemId + " faild");
                 }
             }
-            try
-            {
-                items.Add((ItemEntity)repository.GetById(itemId));
-            }
-            catch(Exception ex)
-            {
-                throw new TransactionFaildExeption("Externel transaction exeption",ex);
-            }
+            items.Add(entity);
+            
         }
 
         public void DeleteItemFromCart(Guid itemId)
         {
+            if (itemId == null) throw new ArgumentNullException("Guid object is null");
             foreach (var item in items)
             {
                 if (item.ItemId == itemId)
                 {
                     items.Remove(item);
-                    break;
+                    return;
                 }
             }
+            throw new NonexistExeption("Deleting item in Cart " + itemId + " faild");
         }
 
         public void MakePurchase(IPayment payment)
         {
+            if (items.Count == 0) throw new NonexistExeption("Shopping cart is empty");
             if (State == 0)
             {                
                 try

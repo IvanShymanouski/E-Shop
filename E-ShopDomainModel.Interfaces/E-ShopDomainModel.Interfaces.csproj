@@ -46,7 +46,6 @@
     <Compile Include="Entites\ItemCategoryRelashionshipEntity.cs" />
     <Compile Include="Entites\ItemEntity.cs" />
     <Compile Include="Entites\ShoppingCartEntity.cs" />
-    <Compile Include="IDiscount.cs" />
     <Compile Include="IDiscountPolicy.cs" />
     <Compile Include="IPayment.cs" />
     <Compile Include="Services\ISercices.cs" />

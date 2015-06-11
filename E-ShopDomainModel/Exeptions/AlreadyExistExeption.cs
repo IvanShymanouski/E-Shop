@@ -7,7 +7,7 @@ using System.Runtime.Serialization;
 namespace E_ShopDomainModel
 {
     [System.Serializable]
-    class AlreadyExistExeption : Exception
+    public class AlreadyExistExeption : Exception
     {
         public AlreadyExistExeption() { }
 
