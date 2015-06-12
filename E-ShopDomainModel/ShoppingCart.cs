@@ -75,7 +75,7 @@ namespace E_ShopDomainModel
             throw new NonexistExeption("Deleting item in Cart " + itemId + " faild");
         }
 
-        public void MakePurchase(IPayment payment)
+        public void MakePurchase(IPayment payment, IServices<ShoppingCartEntity> repository)
         {
             if (items.Count == 0) throw new NonexistExeption("Shopping cart is empty");
             if (State == 0)
@@ -85,6 +85,7 @@ namespace E_ShopDomainModel
                     decimal sum = _discount.PriceCalculation(items);
                     payment.MakePayment(sum);
                     State++;
+                    repository.Create(new ShoppingCartEntity { Id = this.Id, State = this.State });                    
                 }
                 catch (Exception ex)
                 {
@@ -94,7 +95,7 @@ namespace E_ShopDomainModel
             else throw new TransactionFaildExeption("Attempt double accepting");
         }
 
-        public void ChangeState(long step)
+        public void ChangeState(long step, IServices<ShoppingCartEntity> repository)
         {
             if (State != 0)
             {
@@ -112,6 +113,14 @@ namespace E_ShopDomainModel
                 {
                     State = temp;
                     throw new ChangeStatusExeption("Overflow index exeption", ex);
+                }
+                try
+                {
+                    repository.Update(new ShoppingCartEntity { Id = this.Id, State = this.State });
+                }
+                catch (Exception ex)
+                {
+                    throw new TransactionFaildExeption("External \"ChangeState\" transaction exeption", ex);
                 }
             }
             else throw new ChangeStatusExeption("Attempt change status befor accepting order");

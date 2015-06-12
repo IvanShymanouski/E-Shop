@@ -13,7 +13,7 @@ namespace E_ShopDomainModel.Interfaces
             
         void AddItemToCart(ItemEntity entity);
         void DeleteItemFromCart(Guid itemId);
-        void MakePurchase(IPayment payment);
-        void ChangeState(long step);
+        void MakePurchase(IPayment payment, IServices<ShoppingCartEntity> repository);
+        void ChangeState(long step, IServices<ShoppingCartEntity> repository);
     }
 }
