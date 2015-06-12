@@ -40,6 +40,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Exeptions\NonexistExeption.cs" />
+    <Compile Include="Interfaces\Services\IItemCategoryRService.cs" />
+    <Compile Include="Interfaces\Services\INamedSercices.cs" />
+    <Compile Include="Interfaces\Services\ISercices.cs" />
+    <Compile Include="Interfaces\Entities\CategoryEntity.cs" />
+    <Compile Include="Interfaces\Entities\IEntity.cs" />
+    <Compile Include="Interfaces\Entities\ItemCategoryRelashionshipEntity.cs" />
+    <Compile Include="Interfaces\Entities\ItemEntity.cs" />
+    <Compile Include="Interfaces\Entities\ShoppingCartEntity.cs" />
+    <Compile Include="Interfaces\IDiscount.cs" />
+    <Compile Include="Interfaces\IDiscountPolicy.cs" />
+    <Compile Include="Interfaces\IPayment.cs" />
+    <Compile Include="Interfaces\IShoppingCart.cs" />
+    <Compile Include="Interfaces\OrderState.cs" />
     <Compile Include="Services\CategoryService.cs" />
     <Compile Include="Services\ItemCategoryRelashionshipService.cs" />
     <Compile Include="Services\ItemService.cs" />
@@ -51,12 +64,6 @@
     <Compile Include="Payment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShoppingCart.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\E-ShopDomainModel.Interfaces\E-ShopDomainModel.Interfaces.csproj">
-      <Project>{6086b41b-f492-4c30-bdc7-1240f5019703}</Project>
-      <Name>E-ShopDomainModel.Interfaces</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

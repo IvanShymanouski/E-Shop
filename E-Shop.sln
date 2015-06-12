@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-ShopDomainModel", "E-ShopDomainModel\E-ShopDomainModel.csproj", "{B3ED8CB2-5A93-4547-8946-DA0FAAF14075}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-ShopDomainModel.Interfaces", "E-ShopDomainModel.Interfaces\E-ShopDomainModel.Interfaces.csproj", "{6086B41B-F492-4C30-BDC7-1240F5019703}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-ShopDomainModel.Tests", "E-ShopDomainModel.Tests\E-ShopDomainModel.Tests.csproj", "{CAF3E856-DABA-457B-A6AA-6745EE0FF274}"
 EndProject
 Global
@@ -17,10 +15,6 @@ Global
 		{B3ED8CB2-5A93-4547-8946-DA0FAAF14075}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3ED8CB2-5A93-4547-8946-DA0FAAF14075}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3ED8CB2-5A93-4547-8946-DA0FAAF14075}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6086B41B-F492-4C30-BDC7-1240F5019703}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6086B41B-F492-4C30-BDC7-1240F5019703}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6086B41B-F492-4C30-BDC7-1240F5019703}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6086B41B-F492-4C30-BDC7-1240F5019703}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CAF3E856-DABA-457B-A6AA-6745EE0FF274}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CAF3E856-DABA-457B-A6AA-6745EE0FF274}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAF3E856-DABA-457B-A6AA-6745EE0FF274}.Release|Any CPU.ActiveCfg = Release|Any CPU
